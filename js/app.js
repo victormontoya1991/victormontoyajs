@@ -45,11 +45,11 @@ function calculateCredit (preciModel , feeCredit){
     Payment = preci + ((preci * tax) / 100);
     console.log ("Precio con IVA: $"+ Payment);
     instalPayment = Payment / numberFee ;
-    pagos = instalPayment + ((instalPayment  * interests) / 100);
-    console.log ("Precio de cuota: $"+ pagos);
-    totalMensual = pagos + segurity ;
+    amount = instalPayment + ((instalPayment  * interests) / 100);
+    console.log ("Precio de cuota: $"+ amount);
+    totalMonthly = amount + segurity ;
     console.log ("Costo de Seguro $"+ segurity);
-    return totalMensual;
+    return totalMonthly;
 }
 let seleModel = prompt ("Por favor ingresa el modelo Honda que deseas : 125cc, 175cc, 200cc").toLowerCase();
 let selenumberFee = prompt ("Selecciona la cantidad de cuotas : 12, 24, 36, 48").toLowerCase();
