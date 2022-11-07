@@ -1,26 +1,8 @@
-function calculateCredit (preciModel , feeCredit){
+function calculateCredit (feeCredit){
     const tax = 19;
     const segurity = 25000;
     let numberFee = "";
-    let preci = "";
     let interests = "";
-    switch (preciModel) {
-        case '125':
-        case '125cc':
-            preci = 8000000;
-            break;
-        case '175':
-        case '175cc':
-            preci = 10000000;
-            break;
-        case '200':
-        case '200cc':
-            preci = 12000000;
-            break;
-        default:
-            console.log ('No haz seleccionado un modelo corecto');
-            break;
-    }
     switch (feeCredit) {
         case '12':
             numberFee = 12;
@@ -42,8 +24,6 @@ function calculateCredit (preciModel , feeCredit){
             console.log ('Numero de cuotas incorrecto');
             break;
     }
-    Payment = preci + ((preci * tax) / 100);
-    console.log ("Precio con IVA: $"+ Payment);
     instalPayment = Payment / numberFee ;
     pagos = instalPayment + ((instalPayment  * interests) / 100);
     console.log ("Precio de cuota: $"+ pagos);
@@ -51,7 +31,6 @@ function calculateCredit (preciModel , feeCredit){
     console.log ("Costo de Seguro $"+ segurity);
     return totalMensual;
 }
-let seleModel = prompt ("Por favor ingresa el modelo Honda que deseas : 125cc, 175cc, 200cc").toLowerCase();
 let selenumberFee = prompt ("Selecciona la cantidad de cuotas : 12, 24, 36, 48").toLowerCase();
 
 console.log ("Cuota Mensual: $"+ calculateCredit( seleModel , selenumberFee));
