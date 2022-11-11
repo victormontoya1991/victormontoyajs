@@ -44,7 +44,6 @@ a:hover {
   box-sizing: border-box;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  background-color: #202020;
 }
 
 .change .linea-1 {
@@ -167,6 +166,17 @@ header .menuBarmovil .slideMenu .menuPrincipal a {
   border-bottom: 1px solid #181818;
 }
 
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50vh;
+  justify-content: space-between;
+  padding: 0px;
+  grid-template-areas: "carrucelMotorcycles";
+  background: #838383;
+}
+
 footer {
   grid-area: footer;
   display: grid;
@@ -175,7 +185,7 @@ footer {
   justify-content: space-between;
   padding: 0px;
   grid-template-areas: "parnert" "navFooter" "copyRights";
-  margin-top: 50px;
+  background: #202020;
 }
 footer .parnert {
   grid-area: parnert;

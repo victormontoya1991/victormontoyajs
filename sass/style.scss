@@ -40,7 +40,7 @@ a {
         text-shadow: 0 0 30px rgba(255, 255, 255, 0.5019607843);
     }
 }
-@mixin footer($name,$columns, $rows, $pandding, $areas) {
+@mixin area($name,$columns, $rows, $pandding, $areas) {
     grid-area: $name;
     display: grid;
     grid-template-columns: $columns;
@@ -60,7 +60,6 @@ a {
     box-sizing: border-box;
     font-size: 16px;
     font-family: "Poppins", sans-serif;
-    background-color: $color1;
 }
 .change{
     .linea-1 {
@@ -187,9 +186,12 @@ header {
         }
     }
 }
-footer {@include footer(footer, 100%, auto auto auto, 0px, "parnert" "navFooter" "copyRights");
-    margin-top: $cons;
-    .parnert {@include footer(parnert, auto, auto, 40px $cons 40px $cons, "textParnert logos");
+main{@include area(main, 100%, 50vh, 0px, "carrucelMotorcycles");
+    background: $color4;
+}
+footer {@include area(footer, 100%, auto auto auto, 0px, "parnert" "navFooter" "copyRights");
+    background: $color1;
+    .parnert {@include area(parnert, auto, auto, 40px $cons 40px $cons, "textParnert logos");
         align-items: center;
         -moz-column-gap: $cons*2;
             column-gap: $cons*2;
@@ -201,7 +203,7 @@ footer {@include footer(footer, 100%, auto auto auto, 0px, "parnert" "navFooter"
                 }
             }
     }
-    .navFooter {@include footer(navFooter, auto, auto, 80px $cons 80px $cons, "columnMenus columnMenus columnLogo");
+    .navFooter {@include area(navFooter, auto, auto, 80px $cons 80px $cons, "columnMenus columnMenus columnLogo");
         border-top: $color4 solid 1px;
         .columnLogo {
             max-width: $cons*4;
@@ -210,7 +212,7 @@ footer {@include footer(footer, 100%, auto auto auto, 0px, "parnert" "navFooter"
             padding: 0;
         }
     }
-    .copyRights {@include footer(copyRights, auto, auto, 30px, "footerRedes footerCopy");
+    .copyRights {@include area(copyRights, auto, auto, 30px, "footerRedes footerCopy");
         background-color: rgba(0, 0, 0, 0.3019607843);
         .footerRedes{
             display: flex;
