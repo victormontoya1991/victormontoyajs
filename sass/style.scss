@@ -1,0 +1,270 @@
+//----------------------------------------------
+// Const SCSS
+//----------------------------------------------
+$tabletmax:931px;
+$color1:#202020;
+$color2:white;
+$color3:#262528;
+$color4:#838383;
+$color5:#181818;
+$cons:50px;
+%transition{
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+p {
+    font-size: 14px;
+    color: $color4;
+    text-align: justify;
+}
+h2 {
+    font-size: 60px;
+    color: $color2;
+    margin-bottom: 15px;
+}
+li {
+    padding: 5px 10px 5px 10px;
+    list-style-type: none;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+a {
+    text-decoration: none;
+    color: $color2;
+    transition: 0.3s ease;
+    &:hover {
+        color: $color2;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5019607843);
+    }
+}
+@mixin footer($name,$columns, $rows, $pandding, $areas) {
+    grid-area: $name;
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    justify-content: space-between;
+    padding: $pandding;
+    grid-template-areas: $areas;
+}
+//----------------------------------------------
+// Style SCSS
+//----------------------------------------------
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    background-color: $color1;
+}
+.change{
+    .linea-1 {
+        transform: rotate(-45deg) translate(-5px, 5px);
+        position: absolute;
+    }
+    .linea-2 {
+        opacity: 0;
+    }
+    .linea-3 {
+        transform: rotate(45deg) translate(-4px, -4px);
+    }
+}
+header {
+    grid-area: header;
+    .menuBarpc{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: $color3;
+        width: 100%;
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        padding: 0 2%;
+        min-height: 100px;
+        box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.685);
+        .brand{
+            width: 200px;
+            img{
+                max-width: 150px;
+            }
+        }
+        .menuPrincipal{
+            a{
+                padding: 0 10px;
+                font-weight: 500;
+                color: $color2;
+            }
+        }
+        .topRedes{
+            display: flex;
+            a{
+                padding: 0 5px;
+                img{
+                    height: 25px;
+                }
+            }
+        }
+    }
+    .menuBarmovil{
+        background: $color3;
+        width: 100%;
+        position: fixed; 
+        z-index: 99;
+        top: 0;
+        padding: 0 2%;
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 94px;
+        box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.685);
+        .iconMenu {
+            width: 45px;
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            cursor: pointer;
+            transition: 0.4s ease-out;
+            .linea-1, .linea-2, .linea-3 {
+                width: 45px;
+                height: 5px;
+                background-color: $color2;
+                margin: 4px 0px;
+                transition: 0.4s ease-out;
+            }
+        }
+        .brand{
+            width: 200px;
+            img{
+                max-width: 150px;
+            }
+        }
+        .slideMenu{
+            position: fixed;
+            top: 93px;
+            left: -100%;
+            background: $color3;
+            width: 100%;
+            height: 100%;
+            border-top: 1px solid #181818;
+            @extend %transition;
+            &.active{
+                left: 0;
+            }
+            .topRedes{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                color: $color2;
+                width: 100%;
+                padding: 16px 20%;
+                margin-top: 16px;
+                margin-bottom: 5px;
+                a{
+                    padding: 0 5px;
+                    img{
+                        height: 25px;
+                    }
+                }
+            }
+            .menuPrincipal{
+                a{
+                    display: block;
+                    text-align: center;
+                    font-size: 18px;
+                    color: $color2;
+                    padding: 18px 20px;
+                    border-bottom: 1px solid #181818;
+                }
+            }
+        }
+    }
+}
+footer {@include footer(footer, 100%, auto auto auto, 0px, "parnert" "navFooter" "copyRights");
+    margin-top: $cons;
+    .parnert {@include footer(parnert, auto, auto, 40px $cons 40px $cons, "textParnert logos");
+        align-items: center;
+        -moz-column-gap: $cons*2;
+            column-gap: $cons*2;
+        border-top: $color4 solid 1px;
+            .logos {
+                display: flex;
+                .logo{
+                    width: ($cons*3)+30;
+                }
+            }
+    }
+    .navFooter {@include footer(navFooter, auto, auto, 80px $cons 80px $cons, "columnMenus columnMenus columnLogo");
+        border-top: $color4 solid 1px;
+        .columnLogo {
+            max-width: $cons*4;
+        }
+        .navFooter li {
+            padding: 0;
+        }
+    }
+    .copyRights {@include footer(copyRights, auto, auto, 30px, "footerRedes footerCopy");
+        background-color: rgba(0, 0, 0, 0.3019607843);
+        .footerRedes{
+            display: flex;
+            grid-gap: 15px;
+        }
+    }
+}
+//----------------------------------------------
+// Responive SCSS
+//----------------------------------------------
+@media all and (max-width:$tabletmax){
+    header{
+        .menuBarpc{
+            display: none;
+        }
+        .menuBarmovil{
+            display: flex;
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+    footer .parnert{
+        grid-template-areas: "textParnert" "logos";
+        justify-items: center;
+        .logos{
+            justify-content: space-between;
+            margin-top: 20px;
+            .logo{
+                width: 30%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 750px){
+    h2 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 12px;
+    }
+    footer .navFooter{
+        padding: 20px 40px;
+        .columnMenus{
+            .menuFooter{
+            display: none;
+            }
+            .menuFooter1 ul{
+                grid-gap: 10px;
+                display: flex;
+                font-size: 12px;
+            }
+        }
+        .columnLogo{
+            display: none;
+        }
+    } 
+}
