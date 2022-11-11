@@ -57,6 +57,12 @@ a:hover {
   transform: rotate(45deg) translate(-4px, -4px);
 }
 
+body {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  background-image: linear-gradient(to right top, #222223, #212124, #202025, #1f1f25, #1e1e26, #1e1e28, #1f1e2b, #1f1e2d, #212032, #222137, #24233c, #262441);
+}
+
 header {
   grid-area: header;
 }
@@ -65,7 +71,8 @@ header .menuBarpc {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: #262528;
+  background-color: rgba(36, 36, 36, 0.384);
+  backdrop-filter: blur(100px);
   width: 100%;
   position: fixed;
   z-index: 99;
@@ -95,7 +102,8 @@ header .menuBarpc .topRedes a img {
   height: 25px;
 }
 header .menuBarmovil {
-  background: #262528;
+  background-color: rgba(36, 36, 36, 0.384);
+  backdrop-filter: blur(100px);
   width: 100%;
   position: fixed;
   z-index: 99;
@@ -133,9 +141,10 @@ header .menuBarmovil .slideMenu {
   position: fixed;
   top: 93px;
   left: -100%;
-  background: #262528;
+  background-color: #202025;
+  backdrop-filter: blur(100px);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   border-top: 1px solid #181818;
 }
 header .menuBarmovil .slideMenu.active {
@@ -174,7 +183,10 @@ main {
   justify-content: space-between;
   padding: 0px;
   grid-template-areas: "carrucelMotorcycles";
-  background: #838383;
+  margin-top: 90px;
+}
+main .carrucelMotorbike {
+  margin: 40px 0px;
 }
 
 footer {
@@ -185,7 +197,8 @@ footer {
   justify-content: space-between;
   padding: 0px;
   grid-template-areas: "parnert" "navFooter" "copyRights";
-  background: #202020;
+  background-color: rgba(36, 36, 36, 0.384);
+  backdrop-filter: blur(100px);
 }
 footer .parnert {
   grid-area: parnert;
@@ -231,6 +244,7 @@ footer .copyRights {
   padding: 30px;
   grid-template-areas: "footerRedes footerCopy";
   background-color: rgba(0, 0, 0, 0.3019607843);
+  backdrop-filter: blur(100px);
 }
 footer .copyRights .footerRedes {
   display: flex;
