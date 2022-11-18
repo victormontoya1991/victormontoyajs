@@ -19,8 +19,8 @@ const bikersList = document.querySelector('#cardMotorbike')
 
 // Funciones
 //----------
-const selecctBikers =  (e) => {
-    console.log(e.target);
+const selecctBikers = (e) => {
+    console.log(e.target.closest('.cardButton').getAttribute('data-sku'));
 }
 
 /*Rederizado de Motos en lista*/
@@ -28,7 +28,7 @@ const listMotorbiker = () => {
     dataMotorcycles.forEach((motorbiker)=>{
         const cardButton = document.createElement('a')
         cardButton.classList.add('cardButton')
-        cardButton.setAttribute('data-id', motorbiker.sku )
+        cardButton.setAttribute('data-sku', motorbiker.sku )
         cardButton.innerHTML = `
             <img class="cardImg" src="${motorbiker.img}" alt="">
             <div class="cardInf">

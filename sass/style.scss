@@ -244,20 +244,23 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
         }
         .motorBike{
             @include area(motorBike, 30% 70%, auto, 0px , "textmotor imgMotorbike");
-            
             .textmotor{ 
                 grid-area: textmotor;
                 margin-right: -200px;
                 margin-top: 50px;
+                grid-gap: 1000px;
                 h3{
                     padding: 20px 0;
                     font-size: 70px;
                     color: $color4;
                 }
                 p{
-                    padding: 0 200px 0 0;
+                    padding: 10px 200px 0 0;
                     text-align: justify;
                     font-weight: 400;
+                    b{
+                        color: $color4;
+                    }
                 }
                 h4{
                     padding: 20px 0;

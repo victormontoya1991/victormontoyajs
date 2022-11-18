@@ -241,6 +241,7 @@ main .carrucelMotorbike .motorBike .textmotor {
   grid-area: textmotor;
   margin-right: -200px;
   margin-top: 50px;
+  grid-gap: 1000px;
 }
 main .carrucelMotorbike .motorBike .textmotor h3 {
   padding: 20px 0;
@@ -248,9 +249,12 @@ main .carrucelMotorbike .motorBike .textmotor h3 {
   color: #838383;
 }
 main .carrucelMotorbike .motorBike .textmotor p {
-  padding: 0 200px 0 0;
+  padding: 10px 200px 0 0;
   text-align: justify;
   font-weight: 400;
+}
+main .carrucelMotorbike .motorBike .textmotor p b {
+  color: #838383;
 }
 main .carrucelMotorbike .motorBike .textmotor h4 {
   padding: 20px 0;
