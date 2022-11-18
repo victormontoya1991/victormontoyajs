@@ -196,28 +196,55 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
     margin-top: 90px;
     .carrucelMotorbike{
         display: grid;
-        grid-template-columns:30% 70%;
+        grid-template-columns:35% 65%;
         grid-template-areas: "cardMotorbike  motorBike";
-        padding: 0 60px;
+        padding: 0 30px;
+        align-content: space-evenly;
         .cardMotorbike{
             grid-area: cardMotorbike;
             display: grid;
             .cardButton{
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: auto;
-                grid-template-areas: "cardImg cardInf cardInf";
+                grid-template-areas: "cardImg cardInf cardInf cardIcon";
                 grid-gap: 30px;
                 align-items: center;
+                padding-right: 40px;
                 .cardImg { 
                     grid-area: cardImg;
                 }
-                .cardInf {grid-area: cardInf}
+                .cardInf {
+                    grid-area: cardInf;
+                    h5{
+                        font-size: 25px;
+                        color: $color4;
+                    }
+                }
+                .cardIcon{
+                    height: 30px;
+                    width: 30px;
+                }
+                &:hover{
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-areas: "cardImg cardInf cardIcon";
+                    padding-right: 10px;
+                    .cardIcon{
+                        height: 50px;
+                        width: 50px;
+                    }
+                    .cardInf {
+                        h5{
+                            font-size: 20px;
+                            color: $color2;
+                        }
+                    }
+                }
             }
         }
         .motorBike{
-            @include area(motorBike, 30% 70%, auto, 0px, "textmotor imgMotorbike");
-            padding: 30px;
+            @include area(motorBike, 30% 70%, auto, 0px , "textmotor imgMotorbike");
+            
             .textmotor{ 
                 grid-area: textmotor;
                 margin-right: -200px;

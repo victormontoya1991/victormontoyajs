@@ -183,9 +183,10 @@ main {
 }
 main .carrucelMotorbike {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 35% 65%;
   grid-template-areas: "cardMotorbike  motorBike";
-  padding: 0 60px;
+  padding: 0 30px;
+  align-content: space-evenly;
 }
 main .carrucelMotorbike .cardMotorbike {
   grid-area: cardMotorbike;
@@ -193,17 +194,39 @@ main .carrucelMotorbike .cardMotorbike {
 }
 main .carrucelMotorbike .cardMotorbike .cardButton {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
-  grid-template-areas: "cardImg cardInf cardInf";
+  grid-template-areas: "cardImg cardInf cardInf cardIcon";
   grid-gap: 30px;
   align-items: center;
+  padding-right: 40px;
 }
 main .carrucelMotorbike .cardMotorbike .cardButton .cardImg {
   grid-area: cardImg;
 }
 main .carrucelMotorbike .cardMotorbike .cardButton .cardInf {
   grid-area: cardInf;
+}
+main .carrucelMotorbike .cardMotorbike .cardButton .cardInf h5 {
+  font-size: 25px;
+  color: #838383;
+}
+main .carrucelMotorbike .cardMotorbike .cardButton .cardIcon {
+  height: 30px;
+  width: 30px;
+}
+main .carrucelMotorbike .cardMotorbike .cardButton:hover {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "cardImg cardInf cardIcon";
+  padding-right: 10px;
+}
+main .carrucelMotorbike .cardMotorbike .cardButton:hover .cardIcon {
+  height: 50px;
+  width: 50px;
+}
+main .carrucelMotorbike .cardMotorbike .cardButton:hover .cardInf h5 {
+  font-size: 20px;
+  color: #373736;
 }
 main .carrucelMotorbike .motorBike {
   grid-area: motorBike;
@@ -213,7 +236,6 @@ main .carrucelMotorbike .motorBike {
   justify-content: space-between;
   padding: 0px;
   grid-template-areas: "textmotor imgMotorbike";
-  padding: 30px;
 }
 main .carrucelMotorbike .motorBike .textmotor {
   grid-area: textmotor;
