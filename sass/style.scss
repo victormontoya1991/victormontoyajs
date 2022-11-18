@@ -198,7 +198,7 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
         display: grid;
         grid-template-columns:35% 65%;
         grid-template-areas: "cardMotorbike  motorBike";
-        padding: 0 30px;
+        padding: 0 60px;
         align-content: space-evenly;
         .cardMotorbike{
             grid-area: cardMotorbike;
@@ -210,7 +210,7 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
                 grid-template-areas: "cardImg cardInf cardInf cardIcon";
                 grid-gap: 30px;
                 align-items: center;
-                padding-right: 40px;
+                padding-right: 20px;
                 .cardImg { 
                     grid-area: cardImg;
                 }
@@ -228,7 +228,7 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
                 &:hover{
                     grid-template-columns: repeat(3, 1fr);
                     grid-template-areas: "cardImg cardInf cardIcon";
-                    padding-right: 10px;
+                    cursor: pointer;
                     .cardIcon{
                         height: 50px;
                         width: 50px;
