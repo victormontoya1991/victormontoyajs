@@ -2,11 +2,10 @@
 // Const SCSS
 //----------------------------------------------
 $tabletmax:931px;
-$color1:#202020;
-$color2:white;
+$color1:white;
+$color2:#373736;
 $color3:#262528;
 $color4:#838383;
-$color5:#181818;
 $cons:50px;
 %transition{
     -webkit-transition: all .3s ease;
@@ -15,7 +14,7 @@ $cons:50px;
 }
 p {
     font-size: 14px;
-    color: $color4;
+    color: $color2;
     text-align: justify;
 }
 h2 {
@@ -32,11 +31,12 @@ img {
     height: auto;
 }
 a {
+    font-weight: 700;
     text-decoration: none;
     color: $color2;
     transition: 0.3s ease;
     &:hover {
-        color: $color2;
+        color: $color4;
         text-shadow: 0 0 30px rgba(255, 255, 255, 0.5019607843);
     }
 }
@@ -61,22 +61,11 @@ a {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
 }
-.change{
-    .linea-1 {
-        transform: rotate(-45deg) translate(-5px, 5px);
-        position: absolute;
-    }
-    .linea-2 {
-        opacity: 0;
-    }
-    .linea-3 {
-        transform: rotate(45deg) translate(-4px, -4px);
-    }
-}
 body{
     display: grid;
     grid-template-areas: "header" "main" "footer";
-    background-image: linear-gradient(to right top, #222223, #212124, #202025, #1f1f25, #1e1e26, #1e1e28, #1f1e2b, #1f1e2d, #212032, #222137, #24233c, #262441);
+    background: rgb(226,229,241);
+    background: linear-gradient(30deg, rgba(226,229,241,1) 30%, rgba(208,208,208,1) 65%, rgba(180,154,154,1) 100%);
 }
 header {
     grid-area: header;
@@ -85,7 +74,7 @@ header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: rgba(36, 36, 36, 0.384);
+        background-color: rgba(238, 238, 238, 0.116);
         backdrop-filter: blur(100px);
         width: 100%;
         position: fixed;
@@ -93,7 +82,6 @@ header {
         top: 0;
         padding: 0 2%;
         min-height: 100px;
-        box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.685);
         .brand{
             width: 200px;
             img{
@@ -103,22 +91,21 @@ header {
         .menuPrincipal{
             a{
                 padding: 0 10px;
-                font-weight: 500;
-                color: $color2;
             }
         }
         .topRedes{
             display: flex;
             a{
                 padding: 0 5px;
-                img{
-                    height: 25px;
+                svg{
+                    height:40px;
                 }
             }
         }
     }
     .menuBarmovil{
-        background-color: rgba(36, 36, 36, 0.384);
+        border-bottom: 1px solid #181818;
+        background-color: rgba(238, 238, 238, 0.116);
         backdrop-filter: blur(100px);
         width: 100%;
         position: fixed; 
@@ -130,7 +117,6 @@ header {
         justify-content: space-between;
         align-items: center;
         min-height: 94px;
-        box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.685);
         .iconMenu {
             width: 45px;
             display: flex;
@@ -146,18 +132,30 @@ header {
                 transition: 0.4s ease-out;
             }
         }
+        .change{
+            .linea-1 {
+                transform: rotate(-45deg) translate(-5px, 5px);
+                position: absolute;
+            }
+            .linea-2 {
+                opacity: 0;
+            }
+            .linea-3 {
+                transform: rotate(45deg) translate(-4px, -4px);
+            }
+        }
         .brand{
-            width: 200px;
             img{
                 max-width: 150px;
             }
         }
         .slideMenu{
-            position: fixed;
+            background: rgb(238, 238, 238);
+            backdrop-filter: blur(100px);
+            z-index: 1;
+            position: fixed; 
             top: 93px;
             left: -100%;
-            background-color: #202025;
-            backdrop-filter: blur(100px);
             width: 100%;
             height: 100vh;
             border-top: 1px solid #181818;
@@ -194,26 +192,87 @@ header {
         }
     }
 }
-main{@include area(main, 100%, 50vh, 0px, "carrucelMotorcycles");
-    margin-top: 90px;;
+main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
+    margin-top: 90px;
     .carrucelMotorbike{
-        margin: 40px 0px;
+        display: grid;
+        grid-template-columns:30% 70%;
+        grid-template-areas: "cardMotorbike  motorBike";
+        padding: 0 60px;
+        .cardMotorbike{
+            grid-area: cardMotorbike;
+            display: grid;
+            .cardButton{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto;
+                grid-template-areas: "cardImg cardInf cardInf";
+                grid-gap: 30px;
+                align-items: center;
+                .cardImg { 
+                    grid-area: cardImg;
+                }
+                .cardInf {grid-area: cardInf}
+            }
+        }
+        .motorBike{
+            @include area(motorBike, 30% 70%, auto, 0px, "textmotor imgMotorbike");
+            padding: 30px;
+            .textmotor{ 
+                grid-area: textmotor;
+                margin-right: -200px;
+                margin-top: 50px;
+                h3{
+                    padding: 20px 0;
+                    font-size: 70px;
+                    color: $color4;
+                }
+                p{
+                    padding: 0 200px 0 0;
+                    text-align: justify;
+                    font-weight: 400;
+                }
+                h4{
+                    padding: 20px 0;
+                    font-size: 50px;
+                }
+                .infoMotorbike{
+                    font-size: 16px;
+                    padding: 10px 40px;
+                    font-weight: 700;
+                    border-radius: 0px;
+                    border: 1px solid #181818;
+                    background-color: rgba(238, 238, 238, 0.116);
+                    backdrop-filter: blur(100px);
+                }
+            }
+            .imgMotorbike{
+                grid-area: imgMotorbike;
+                height: 800px;
+                width: 800px;
+                background-image: url(../assets/img/product/benelli150.png);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat
+            }
+        }
     }
 }
 footer {@include area(footer, 100%, auto auto auto, 0px, "parnert" "navFooter" "copyRights");
-    background-color: rgba(36, 36, 36, 0.384);
+    background-color: rgba(238, 238, 238, 0.116);
     backdrop-filter: blur(100px);
-    .parnert {@include area(parnert, auto, auto, 40px $cons 40px $cons, "textParnert logos");
+    .parnert {@include area(parnert, auto, auto, 30px $cons 40px $cons, "textParnert logos");
+        border-top: $color4 solid 1px;
         align-items: center;
         -moz-column-gap: $cons*2;
             column-gap: $cons*2;
-        border-top: $color4 solid 1px;
-            .logos {
-                display: flex;
-                .logo{
-                    width: ($cons*3)+30;
-                }
+        .logos {
+            display: flex;
+            grid-gap: 30px;
+            .logo{
+                width: ($cons*3)+30;
             }
+        }
     }
     .navFooter {@include area(navFooter, auto, auto, 80px $cons 80px $cons, "columnMenus columnMenus columnLogo");
         border-top: $color4 solid 1px;
@@ -224,12 +283,17 @@ footer {@include area(footer, 100%, auto auto auto, 0px, "parnert" "navFooter" "
             padding: 0;
         }
     }
-    .copyRights {@include area(copyRights, auto, auto, 30px, "footerRedes footerCopy");
-        background-color: rgba(0, 0, 0, 0.3019607843);
+    .copyRights {@include area(copyRights, auto, auto, 20px 50px, "footerRedes footerCopy");
+        align-items: center;
+        background-color: rgba(238, 238, 238, 0.116);
         backdrop-filter: blur(100px);
+        border-top: $color4 solid 1px;
         .footerRedes{
             display: flex;
-            grid-gap: 15px;
+            grid-gap: 5px;
+            svg{
+                height:40px;
+            }
         }
     }
 }

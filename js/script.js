@@ -1,13 +1,14 @@
 const menu = document.getElementById("iconMenu");
-function myFunction(x) {
-    menu.classList.toggle("change-menu");
-    x.classList.toggle("change");
-}
 const propMenu = {
     burger_menu: document.getElementById('iconMenu'),
     slideMenu: document.getElementById('slideMenu'),
     menu_activo: false,
     elem_menu: document.querySelectorAll('#slideMenu .menuPrincipal a')
+}
+
+function myFunction(iconMenu) {
+    menu.classList.toggle("change-menu");
+    iconMenu.classList.toggle("change");
 }
 const metMenu = {	
     inicio: function () {		
