@@ -19,11 +19,16 @@ const bikersList = document.querySelector('#cardMotorbike')
 
 // Funciones
 //----------
+const selecctBikers =  (e) => {
+    console.log(e.target);
+}
+
+/*Rederizado de Motos en lista*/
 const listMotorbiker = () => {
     dataMotorcycles.forEach((motorbiker)=>{
         const cardButton = document.createElement('a')
-        cardButton.href= '#'
         cardButton.classList.add('cardButton')
+        cardButton.setAttribute('data-id', motorbiker.sku )
         cardButton.innerHTML = `
             <img class="cardImg" src="${motorbiker.img}" alt="">
             <div class="cardInf">
@@ -36,6 +41,10 @@ const listMotorbiker = () => {
         `
         bikersList.append(cardButton)
     });
+    const cardButtons = document.querySelectorAll('.cardButton')
+    cardButtons.forEach((a) => {
+        a.addEventListener('click', selecctBikers)
+    })
 }
 
 
