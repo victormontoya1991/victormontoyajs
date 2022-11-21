@@ -4,7 +4,6 @@
 // Array
 //------
 const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,benelli500cc]
-console.log(dataMotorcycles); 
 
 // Array Cart
 //------------
@@ -14,21 +13,35 @@ let budgetMotorcycles = []
 // Query de Elementos
 //-------------------
 const bikersList = document.querySelector('#cardMotorbike')
-
-
+const nameMotorbike = document.querySelector('.nameMotorbike')
+const descriptionMotorbike = document.querySelector('.descriptionMotorbike')
+const cilindrajeMotorbike = document.querySelector('.cilindrajeMotorbike')
+const powerMotorbike = document.querySelector('.powerMotorbike')
+const torqueMotorbike = document.querySelector('.torqueMotorbike')
+const priceMotorbike = document.querySelector('.priceMotorbike')
+const infoMotorbike = document.querySelector('.infoMotorbike')
+const imgMotorbike = document.querySelector('.imgMotorbike')
 
 // Funciones
 //----------
 const selecctBikers = (e) => {
-    console.log(e.target.closest('.cardButton').getAttribute('data-sku'));
+    const skuSelecctBikers = e.target.closest('.cardButton').getAttribute('data-sku')
+    const selecctBikers = dataMotorcycles.find((motorbiker) => motorbiker.sku == skuSelecctBikers)
+    nameMotorbike.textContent = selecctBikers.name
+    descriptionMotorbike.textContent = selecctBikers.description
+    cilindrajeMotorbike.textContent = `Cilindraje: ${selecctBikers.cilindraje}`
+    powerMotorbike.textContent = `Potencia: ${selecctBikers.power}`
+    torqueMotorbike.textContent = `Torque: ${selecctBikers.torque}`
+    priceMotorbike.textContent = `$${selecctBikers.preci}`
+    imgMotorbike.style.backgroundImage = `url(${selecctBikers.img})`
 }
 
 /*Rederizado de Motos en lista*/
-const listMotorbiker = () => {
-    dataMotorcycles.forEach((motorbiker)=>{
+function listMotorbiker() {
+    dataMotorcycles.forEach((motorbiker) => {
         const cardButton = document.createElement('a')
         cardButton.classList.add('cardButton')
-        cardButton.setAttribute('data-sku', motorbiker.sku )
+        cardButton.setAttribute('data-sku', motorbiker.sku)
         cardButton.innerHTML = `
             <img class="cardImg" src="${motorbiker.img}" alt="">
             <div class="cardInf">
@@ -40,7 +53,7 @@ const listMotorbiker = () => {
             </div>
         `
         bikersList.append(cardButton)
-    });
+    })
     const cardButtons = document.querySelectorAll('.cardButton')
     cardButtons.forEach((a) => {
         a.addEventListener('click', selecctBikers)
