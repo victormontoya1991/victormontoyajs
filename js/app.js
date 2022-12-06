@@ -34,6 +34,7 @@ const selecctBikers = (e) => {
     torqueMotorbike.textContent = `Torque: ${selecctBikers.torque}`
     priceMotorbike.textContent = `$${selecctBikers.preci}`
     imgMotorbike.style.backgroundImage = `url(${selecctBikers.img})`
+    infoMotorbike.setAttribute('data-sku',selecctBikers.sku)
 }
 
 /*Rederizado de Motos en lista*/
@@ -60,12 +61,19 @@ function listMotorbiker() {
     })
 }
 
+const generateBudget = (e) => {
+    const skuMotorBikerSelection = e.target.getAttribute('data-sku')
+    const bikerSelection = dataMotorcycles.find((motorbiker) => motorbiker.sku == skuMotorBikerSelection)
+
+    bikersBudget.push(bikerSelection)
+    cardMotorBikers()
+}
 
 
 // EventListeners
 //---------------
 
-
+infoMotorbike.addEventListener('click', generateBudget)
 
 
 // Ejecuciones
