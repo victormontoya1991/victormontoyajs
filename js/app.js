@@ -61,10 +61,12 @@ function listMotorbiker() {
     })
 }
 
+
+
+// no esta renderizado********************************************************************
 const generateBudget = (e) => {
     const skuMotorBikerSelection = e.target.getAttribute('data-sku')
     const bikerSelection = dataMotorcycles.find((motorbiker) => motorbiker.sku == skuMotorBikerSelection)
-
     bikersBudget.push(bikerSelection)
     cardMotorBikers()
 }
