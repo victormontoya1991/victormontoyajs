@@ -15,6 +15,7 @@ if (localStorage.getItem('carMontobiker')){
     carMontobiker =[]
 }
 
+
 //***************************************************** */
 ///Mostrar carro pára construir *************************
 console.log ('carMontobiker', carMontobiker);
@@ -75,7 +76,14 @@ function listMotorbiker() {
 const generateCar = (e) => {
     const skuMotorBikerSelection = e.target.getAttribute('data-sku')
     const bikerSku = dataMotorcycles.find((motorbiker) => motorbiker.sku == skuMotorBikerSelection)
-    carMontobiker.push(bikerSku)
+    if ( carMontobiker.length < 1){
+        carMontobiker.push(bikerSku)
+    }else{
+        carMontobiker.shift()
+        carMontobiker.push(bikerSku)
+    }
+    ///quitar
+    console.log('carMontobiker',carMontobiker);
     localStorage.setItem('carMontobiker' , JSON.stringify (carMontobiker))
 }
 
