@@ -7,7 +7,17 @@ const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,b
 
 // Array Cart
 //------------
-let budgetMotorcycles = []
+
+let carMontobiker
+if (localStorage.getItem('carMontobiker')){
+    carMontobiker = JSON.parse (localStorage.getItem ('carMontobiker'))
+}else{
+    carMontobiker =[]
+}
+
+//***************************************************** */
+///Mostrar carro pára construir *************************
+console.log ('carMontobiker', carMontobiker);
 
 
 // Query de Elementos
@@ -56,26 +66,24 @@ function listMotorbiker() {
         bikersList.append(cardButton)
     })
     const cardButtons = document.querySelectorAll('.cardButton')
-    cardButtons.forEach((a) => {
-        a.addEventListener('click', selecctBikers)
+    cardButtons.forEach((slider) => {
+        slider.addEventListener('click', selecctBikers)
     })
 }
 
-
-
-// no esta renderizado********************************************************************
-const generateBudget = (e) => {
+// Car
+const generateCar = (e) => {
     const skuMotorBikerSelection = e.target.getAttribute('data-sku')
-    const bikerSelection = dataMotorcycles.find((motorbiker) => motorbiker.sku == skuMotorBikerSelection)
-    bikersBudget.push(bikerSelection)
-    cardMotorBikers()
+    const bikerSku = dataMotorcycles.find((motorbiker) => motorbiker.sku == skuMotorBikerSelection)
+    carMontobiker.push(bikerSku)
+    localStorage.setItem('carMontobiker' , JSON.stringify (carMontobiker))
 }
 
 
 // EventListeners
 //---------------
 
-infoMotorbike.addEventListener('click', generateBudget)
+infoMotorbike.addEventListener('click', generateCar)
 
 
 // Ejecuciones
