@@ -288,7 +288,7 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
         }
     }
 }
-footer {@include area(footer, 100%, auto auto auto, 0px, "parnert" "navFooter" "copyRights");
+footer {@include area(footer, 100%, auto auto auto, 0px, "parnert""copyRights");
     background-color: rgba(238, 238, 238, 0.116);
     backdrop-filter: blur(100px);
     .parnert {@include area(parnert, auto, auto, 30px $cons 40px $cons, "textParnert logos");
@@ -302,15 +302,6 @@ footer {@include area(footer, 100%, auto auto auto, 0px, "parnert" "navFooter" "
             .logo{
                 width: ($cons*3)+30;
             }
-        }
-    }
-    .navFooter {@include area(navFooter, auto, auto, 80px $cons 80px $cons, "columnMenus columnMenus columnLogo");
-        border-top: $color4 solid 1px;
-        .columnLogo {
-            max-width: $cons*4;
-        }
-        .navFooter li {
-            padding: 0;
         }
     }
     .copyRights {@include area(copyRights, auto, auto, 20px 50px, "footerRedes footerCopy");

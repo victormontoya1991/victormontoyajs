@@ -286,7 +286,7 @@ footer {
   grid-template-rows: auto auto auto;
   justify-content: space-between;
   padding: 0px;
-  grid-template-areas: "parnert" "navFooter" "copyRights";
+  grid-template-areas: "parnert" "copyRights";
   background-color: rgba(238, 238, 238, 0.116);
   backdrop-filter: blur(100px);
 }
@@ -309,22 +309,6 @@ footer .parnert .logos {
 }
 footer .parnert .logos .logo {
   width: 180px;
-}
-footer .navFooter {
-  grid-area: navFooter;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  justify-content: space-between;
-  padding: 80px 50px 80px 50px;
-  grid-template-areas: "columnMenus columnMenus columnLogo";
-  border-top: #838383 solid 1px;
-}
-footer .navFooter .columnLogo {
-  max-width: 200px;
-}
-footer .navFooter .navFooter li {
-  padding: 0;
 }
 footer .copyRights {
   grid-area: copyRights;
