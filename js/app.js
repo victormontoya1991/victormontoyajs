@@ -1,25 +1,19 @@
 // Declaraciones
 //--------------
-
 // Array
 //------
 const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,benelli500cc]
-
 // Array Cart
 //------------
-
 let carMontobiker
 if (localStorage.getItem('carMontobiker')){
     carMontobiker = JSON.parse (localStorage.getItem ('carMontobiker'))
 }else{
     carMontobiker =[]
 }
-
-
 //***************************************************** */
 ///Mostrar carro pára construir *************************
 console.log ('carMontobiker', carMontobiker);
-
 
 // Query de Elementos
 //-------------------
@@ -32,7 +26,6 @@ const torqueMotorbike = document.querySelector('.torqueMotorbike')
 const priceMotorbike = document.querySelector('.priceMotorbike')
 const infoMotorbike = document.querySelector('.infoMotorbike')
 const imgMotorbike = document.querySelector('.imgMotorbike')
-
 // Funciones
 //----------
 const selecctBikers = (e) => {
@@ -47,7 +40,6 @@ const selecctBikers = (e) => {
     imgMotorbike.style.backgroundImage = `url(${selecctBikers.img})`
     infoMotorbike.setAttribute('data-sku',selecctBikers.sku)
 }
-
 /*Rederizado de Motos en lista*/
 function listMotorbiker() {
     dataMotorcycles.forEach((motorbiker) => {
@@ -71,8 +63,7 @@ function listMotorbiker() {
         slider.addEventListener('click', selecctBikers)
     })
 }
-
-// Car
+// Car constructor
 const generateCar = (e) => {
     const skuMotorBikerSelection = e.target.getAttribute('data-sku')
     const bikerSku = dataMotorcycles.find((motorbiker) => motorbiker.sku == skuMotorBikerSelection)
@@ -82,19 +73,11 @@ const generateCar = (e) => {
         carMontobiker.shift()
         carMontobiker.push(bikerSku)
     }
-    ///quitar
-    console.log('carMontobiker',carMontobiker);
     localStorage.setItem('carMontobiker' , JSON.stringify (carMontobiker))
 }
-
-
 // EventListeners
 //---------------
-
 infoMotorbike.addEventListener('click', generateCar)
-
-
 // Ejecuciones
 //------------
-
 listMotorbiker()
