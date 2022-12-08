@@ -6,6 +6,7 @@ $color1:white;
 $color2:#373736;
 $color3:#262528;
 $color4:#838383;
+$color5: #ff4848;
 $cons:50px;
 %transition{
     -webkit-transition: all .3s ease;
@@ -284,6 +285,32 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat
+            }
+        }
+    }
+    .crediMotorbike{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        min-height: 60vh;
+        align-content: center;
+        .emptyCar{
+            display: grid;
+            justify-items: center;
+            h2{
+                font-size: 50px;
+                text-align: center;
+                color:$color5;
+            }
+            a{
+                text-align: center;
+                font-size: 16px;
+                padding: 10px 40px;
+                font-weight: 700;
+                border-radius: 0px;
+                border: 1px solid #181818;
+                background-color: rgba(238, 238, 238, 0.116);
+                backdrop-filter: blur(100px);
             }
         }
     }
