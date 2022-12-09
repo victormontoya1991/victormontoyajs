@@ -4,7 +4,10 @@
 //------
 const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,benelli500cc]
 const carMontobiker = JSON.parse(localStorage.getItem('carMontobiker')) || []
+const dataMonths = [months12,months24,months36,months48]
 
+
+console.log (dataMonths);
 // Query de Elementos
 const crediMotorbike = document.querySelector('#crediMotorbike')
 
@@ -54,6 +57,17 @@ const carBikers = () => {
         crediMotorbike.append(credibike)
     }
 }
+function listMonths () {
+    dataMonths.forEach((mosths) => {
+        const cardMonths = document.createElement ('a')
+        cardMonths.classList.add('cardMonths')
+        cardMonths.innerHTML=`<a>${mosths.numb}</a>`
+        crediMotorbike.append(cardMonths)
+    })
+}
+
+
 
 /*Rederizado aviso*/
 carBikers() 
+listMonths()
