@@ -6,7 +6,6 @@ const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,b
 const carMontobiker = JSON.parse(localStorage.getItem('carMontobiker')) || []
 const dataMonths = [months12,months24,months36,months48]
 const listMonthsbiker = []
-console.log(listMonthsbiker );
 // Query de Elementos
 const crediMotorbike = document.querySelector('#crediMotorbike')
 const listMonthsbike =document.querySelector('#listMonths')
@@ -54,11 +53,6 @@ const carBikers = () => {
         crediMotorbike.append(credibike)
     }
 }
-const seleccMonths = (e) => {
-    const bikerSeleccmonts = e.target.getAttribute('data-numb')
-    const months = dataMonths.find((mosths) => mosths.numb == bikerSeleccmonts)
-    listMonthsbiker.push(months)
-}
 function listMonths () {
     dataMonths.forEach((mosths) => {
         const cardMonths = document.createElement ('a')
@@ -72,9 +66,16 @@ function listMonths () {
         slider.addEventListener('click', seleccMonths)
     })
 }
-
-
-
+const seleccMonths = (e) => {
+    const bikerSeleccmonts = e.target.getAttribute('data-numb')
+    const months = dataMonths.find((mosths) => mosths.numb == bikerSeleccmonts)
+    if ( carMontobiker.length < 1){
+        listMonthsbiker.push(months)
+    }else{
+        listMonthsbiker.shift()
+        listMonthsbiker.push(months)
+    }
+}
 /*Rederizado aviso*/
 carBikers() 
 listMonths()
