@@ -63,10 +63,15 @@ const carBikers = () => {
             })
             const monthsButtons = document.querySelectorAll('.cardMonths')
             monthsButtons.forEach((slider) => {
-                slider.addEventListener('click', seleccMonths)
+                slider.addEventListener('click', seleccMonths, totalBikes)
             })
         }
         listMonths()
+        const totalBikes = (e) => {
+            const bikerTotal = e.target.getAttribute('data-numb')
+            const itemMonths = dataMonths.find((mosths) => mosths.numb == bikerTotal )
+            console.log(itemMonths);
+        }
     }else{
         const credibike = document.createElement('div')
         credibike.classList.add('emptyCar')
