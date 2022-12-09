@@ -19,12 +19,13 @@ const benelli302cc = new Motorcycles('Benelli 302cc','mt004', '../assets/img/pro
 const benelli500cc = new Motorcycles('Benelli 500cc','mt005','../assets/img/product/benelli500.png','2022','500cc', '47,6 HP @ 8500 rpm','46 Nm @ 6000 rpm','El 502C de Benelli causa una primera impresión intensa con sus líneas elegantes y agresivas y su postura larga y baja. Respalda su estilo audaz con una impresionante variedad de tecnología que hacen del 502C un valor increíble. Su ergonomía de cruiser con retroceso y su asiento bajo posicionan perfectamente al piloto para sacar el máximo provecho del motor equipado en su motocicleta, un motor cuatro tiempos de 500 cc, con dos cilindros en paralelo y cuatro válvulas por cilindro, que darán al piloto un control total.','34990000')
 
 class Cuotas {
-    constructor(numb, interest){
+    constructor(nameM ,numb, interest){
+        this.nameM = nameM;
         this.numb = numb;
         this.interest = interest;
     }
 }
-const months12 = new Cuotas('12 Meses', '9')
-const months24 = new Cuotas('24 Meses', '12')
-const months36 = new Cuotas('36 Meses', '14')
-const months48 = new Cuotas('48 Meses', '16')
+const months12 = new Cuotas('12 Meses', '12', '9')
+const months24 = new Cuotas('24 Meses', '24', '12')
+const months36 = new Cuotas('36 Meses', '36', '14')
+const months48 = new Cuotas('48 Meses', '48', '16')

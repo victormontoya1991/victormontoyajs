@@ -11,10 +11,6 @@ if (localStorage.getItem('carMontobiker')){
 }else{
     carMontobiker =[]
 }
-//***************************************************** */
-///Mostrar carro pára construir *************************
-console.log ('carMontobiker', carMontobiker);
-
 // Query de Elementos
 //-------------------
 const bikersList = document.querySelector('#cardMotorbike')
