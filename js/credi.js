@@ -59,7 +59,6 @@ const carBikers = () => {
                 cardMonths.setAttribute('data-numb', mosths.numb)
                 cardMonths.classList.add('cardMonths')
                 cardMonths.innerHTML=`${mosths.nameM}`
-                cardMonths.innerHTML=`${mosths.numb}`
                 listMonthsbike.append(cardMonths)
             })
             const monthsButtons = document.querySelectorAll('.cardMonths')
