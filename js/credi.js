@@ -6,6 +6,7 @@ const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,b
 const carMontobiker = JSON.parse(localStorage.getItem('carMontobiker')) || []
 const dataMonths = [months12,months24,months36,months48]
 let listMonthsbiker = []
+console.log(listMonthsbiker);
 // Query de Elementos
 const crediMotorbike = document.querySelector('#crediMotorbike')
 const listMonthsbike =document.querySelector('#listMonths')
@@ -77,5 +78,8 @@ const carBikers = () => {
         crediMotorbike.append(credibike)
     }
 }
+
+
+
 /*Rederizado aviso*/
 carBikers() 
