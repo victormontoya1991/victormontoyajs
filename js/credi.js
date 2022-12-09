@@ -11,10 +11,17 @@ const crediMotorbike = document.querySelector('#crediMotorbike')
 
 // Funciones
 //----------
+const delecBikers = (e) => {
+    const delecBikerSelection = e.target.getAttribute('data-sku')
+    const bikerSku = dataMotorcycles.find((motorbiker) => motorbiker.sku == delecBikerSelection)
+    carMontobiker.shift()
+    localStorage.setItem ('carMontobiker' , JSON.stringify (carMontobiker))
+}
 
 const carBikers = () => {
     carMontobiker.forEach((motorbiker)=>{
         const credibike = document.createElement('a')
+        credibike.href = ('../index.html')
         credibike.classList.add('carBikers')
         credibike.setAttribute('data-sku', motorbiker.sku)
         credibike.innerHTML=`
@@ -32,7 +39,10 @@ const carBikers = () => {
         `
         crediMotorbike.append(credibike)
     })
-
+    const deleButtons = document.querySelectorAll('.carBikers')
+    deleButtons.forEach((slider) => {
+        slider.addEventListener('click', delecBikers)
+    })
 }
 
 /*Rederizado aviso*/
