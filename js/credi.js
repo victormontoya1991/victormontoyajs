@@ -66,12 +66,13 @@ const carBikers = () => {
                 slider.addEventListener('click', seleccMonths, totalBikes)
             })
         }
-        listMonths()
         const totalBikes = (e) => {
             const bikerTotal = e.target.getAttribute('data-numb')
             const itemMonths = dataMonths.find((mosths) => mosths.numb == bikerTotal )
             console.log(itemMonths);
         }
+        listMonths()
+        
     }else{
         const credibike = document.createElement('div')
         credibike.classList.add('emptyCar')
