@@ -37,8 +37,7 @@ a {
     color: $color2;
     transition: 0.3s ease;
     &:hover {
-        color: $color4;
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5019607843);
+        opacity: 0.8;
     }
 }
 @mixin area($name,$columns, $rows, $pandding, $areas) {
@@ -330,6 +329,10 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
                 text-align: center;
                 h5{
                     font-size: 35px;
+                }
+                p{
+                    text-align: center;
+                    font-weight: 300
                 }
             }
         }

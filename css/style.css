@@ -33,8 +33,7 @@ a {
   transition: 0.3s ease;
 }
 a:hover {
-  color: #838383;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5019607843);
+  opacity: 0.8;
 }
 
 * {
@@ -323,6 +322,10 @@ main .crediMotorbike .carBikers .infCarbikers {
 }
 main .crediMotorbike .carBikers .infCarbikers h5 {
   font-size: 35px;
+}
+main .crediMotorbike .carBikers .infCarbikers p {
+  text-align: center;
+  font-weight: 300;
 }
 
 footer {
