@@ -58,12 +58,12 @@ const carBikers = () => {
                 const cardMonths = document.createElement ('a')
                 cardMonths.setAttribute('data-numb', mosths.numb)
                 cardMonths.classList.add('cardMonths')
-                cardMonths.innerHTML=`${mosths.numb}`
+                cardMonths.innerHTML=`${mosths.nameM}`
                 listMonthsbike.append(cardMonths)
             })
             const monthsButtons = document.querySelectorAll('.cardMonths')
             monthsButtons.forEach((slider) => {
-                slider.addEventListener('click', seleccMonths)
+                slider.addEventListener('click', seleccMonths, totalBikes)
             })
         }
         listMonths()
