@@ -26,7 +26,7 @@ const carBikers = () => {
             credibike.setAttribute('data-sku', motorbiker.sku)
             credibike.innerHTML=`
                 <div class="imgCarbikers">
-                    <img src="${.motorbiker.img}">
+                    <img src="${motorbiker.img}">
                 </div>
                 <div class="infCarbikers">
                     <h5>${motorbiker.name}</h5>
