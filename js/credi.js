@@ -5,7 +5,7 @@
 const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,benelli500cc]
 const carMontobiker = JSON.parse(localStorage.getItem('carMontobiker')) || []
 const dataMonths = [months12,months24,months36,months48]
-const listMonthsbiker = []
+let listMonthsbiker = []
 // Query de Elementos
 const crediMotorbike = document.querySelector('#crediMotorbike')
 const listMonthsbike =document.querySelector('#listMonths')
@@ -43,6 +43,30 @@ const carBikers = () => {
         deleButtons.forEach((slider) => {
             slider.addEventListener('click', delecBikers)
         })
+        function listMonths () {
+            dataMonths.forEach((mosths) => {
+                const cardMonths = document.createElement ('a')
+                cardMonths.setAttribute('data-numb', mosths.numb)
+                cardMonths.classList.add('cardMonths')
+                cardMonths.innerHTML=`${mosths.nameM}`
+                listMonthsbike.append(cardMonths)
+            })
+            const monthsButtons = document.querySelectorAll('.cardMonths')
+            monthsButtons.forEach((slider) => {
+                slider.addEventListener('click', seleccMonths)
+            })
+        }
+        const seleccMonths = (e) => {
+            const bikerSeleccmonts = e.target.getAttribute('data-numb')
+            const months = dataMonths.find((mosths) => mosths.numb == bikerSeleccmonts)
+            if ( carMontobiker.length < 1){
+                listMonthsbiker.push(months)
+            }else{
+                listMonthsbiker.shift()
+                listMonthsbiker.push(months)
+            }
+        }
+        listMonths()
     }else{
         const credibike = document.createElement('div')
         credibike.classList.add('emptyCar')
@@ -53,29 +77,8 @@ const carBikers = () => {
         crediMotorbike.append(credibike)
     }
 }
-function listMonths () {
-    dataMonths.forEach((mosths) => {
-        const cardMonths = document.createElement ('a')
-        cardMonths.setAttribute('data-numb', mosths.numb)
-        cardMonths.classList.add('cardMonths')
-        cardMonths.innerHTML=`${mosths.nameM}`
-        listMonthsbike.append(cardMonths)
-    })
-    const monthsButtons = document.querySelectorAll('.cardMonths')
-    monthsButtons.forEach((slider) => {
-        slider.addEventListener('click', seleccMonths)
-    })
-}
-const seleccMonths = (e) => {
-    const bikerSeleccmonts = e.target.getAttribute('data-numb')
-    const months = dataMonths.find((mosths) => mosths.numb == bikerSeleccmonts)
-    if ( carMontobiker.length < 1){
-        listMonthsbiker.push(months)
-    }else{
-        listMonthsbiker.shift()
-        listMonthsbiker.push(months)
-    }
-}
+
+
+
 /*Rederizado aviso*/
 carBikers() 
-listMonths()
