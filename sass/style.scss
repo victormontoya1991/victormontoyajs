@@ -290,10 +290,12 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
     }
     .crediMotorbike{
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
         min-height: 60vh;
         align-content: center;
+        justify-items: center;
+        grid-template-areas: "emptyCar" "carBikers";
         .emptyCar{
             display: grid;
             justify-items: center;
@@ -311,6 +313,24 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
                 border: 1px solid #181818;
                 background-color: rgba(238, 238, 238, 0.116);
                 backdrop-filter: blur(100px);
+            }
+        }
+        .carBikers{
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            grid-template-areas: "imgCarbikers" "infCarbikers" "iconCarbikers";
+            max-width: 800px;
+            .imgCarbikers{
+                height: 150px;
+                width: 150px;
+            }
+            .infCarbikers{
+                text-align: center;
+                h5{
+                    font-size: 35px;
+                }
             }
         }
     }
