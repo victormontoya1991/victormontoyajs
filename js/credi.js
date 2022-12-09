@@ -63,7 +63,7 @@ const carBikers = () => {
             })
             const monthsButtons = document.querySelectorAll('.cardMonths')
             monthsButtons.forEach((slider) => {
-                slider.addEventListener('click', seleccMonths, totalBikes)
+                slider.addEventListener('click', seleccMonths )
             })
         }
         listMonths()
