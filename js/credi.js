@@ -78,7 +78,5 @@ const carBikers = () => {
     }
 }
 
-
-
 /*Rederizado aviso*/
 carBikers() 
