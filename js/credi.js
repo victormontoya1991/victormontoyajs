@@ -43,6 +43,16 @@ const carBikers = () => {
         deleButtons.forEach((slider) => {
             slider.addEventListener('click', delecBikers)
         })
+        const seleccMonths = (e) => {
+            const bikerSeleccmonts = e.target.getAttribute('data-numb')
+            const months = dataMonths.find((mosths) => mosths.numb == bikerSeleccmonts)
+            if ( carMontobiker.length < 1){
+                listMonthsbiker.push(months)
+            }else{
+                listMonthsbiker.shift()
+                listMonthsbiker.push(months)
+            }
+        }
         function listMonths () {
             dataMonths.forEach((mosths) => {
                 const cardMonths = document.createElement ('a')
@@ -55,16 +65,6 @@ const carBikers = () => {
             monthsButtons.forEach((slider) => {
                 slider.addEventListener('click', seleccMonths)
             })
-        }
-        const seleccMonths = (e) => {
-            const bikerSeleccmonts = e.target.getAttribute('data-numb')
-            const months = dataMonths.find((mosths) => mosths.numb == bikerSeleccmonts)
-            if ( carMontobiker.length < 1){
-                listMonthsbiker.push(months)
-            }else{
-                listMonthsbiker.shift()
-                listMonthsbiker.push(months)
-            }
         }
         listMonths()
     }else{
