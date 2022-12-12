@@ -347,6 +347,44 @@ main .carrucelMotorbike .motorBike .imgMotorbike {
   font-size: 30px;
   color: #838383;
 }
+.mainCredi .totalMonths {
+  display: grid;
+  grid-template-areas: "listMonths" "totalCredi";
+  margin-bottom: 30px;
+}
+.mainCredi .totalMonths .listMonths {
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+.mainCredi .totalMonths .listMonths a {
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px 40px;
+  font-weight: 700;
+  border-radius: 0px;
+  border: 1px solid #181818;
+  background-color: rgba(238, 238, 238, 0.116);
+  backdrop-filter: blur(100px);
+}
+.mainCredi .totalMonths .totalCredi {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.mainCredi .totalMonths .totalCredi p {
+  text-align: center;
+}
+.mainCredi .totalMonths .totalCredi h4 {
+  font-size: 35px;
+  color: #ff4848;
+  line-height: 30px;
+}
+.mainCredi .totalMonths .totalCredi .feeSegurity {
+  padding: 10px 0;
+  border-top: 1px solid #838383;
+  border-bottom: 1px solid #838383;
+  margin: 10px 0;
+}
 
 footer {
   grid-area: footer;
