@@ -26,7 +26,7 @@ class Cuotas {
         this.interest = interest;
     }
 }
-const months12 = new Cuotas('12 Meses', '12', '9')
-const months24 = new Cuotas('24 Meses', '24', '12')
-const months36 = new Cuotas('36 Meses', '36', '14')
-const months48 = new Cuotas('48 Meses', '48', '16')
+const months12 = new Cuotas('12 Meses', '12')
+const months24 = new Cuotas('24 Meses', '24')
+const months36 = new Cuotas('36 Meses', '36')
+const months48 = new Cuotas('48 Meses', '48')

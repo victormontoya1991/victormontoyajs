@@ -308,16 +308,20 @@ main .crediMotorbike .emptyCar a {
 main .crediMotorbike .carBikers {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 30% 50% 20%;
+  grid-template-rows: auto;
   align-items: center;
-  grid-template-areas: "imgCarbikers" "infCarbikers" "iconCarbikers";
+  grid-template-areas: "imgCarbikers infCarbikers iconCarbikers" "titleCarbikers titleCarbikers titleCarbikers";
+  min-width: 500px;
   max-width: 800px;
 }
 main .crediMotorbike .carBikers .imgCarbikers {
+  grid-area: imgCarbikers;
   height: 150px;
   width: 150px;
 }
 main .crediMotorbike .carBikers .infCarbikers {
+  grid-area: infCarbikers;
   text-align: center;
 }
 main .crediMotorbike .carBikers .infCarbikers h5 {
@@ -326,6 +330,15 @@ main .crediMotorbike .carBikers .infCarbikers h5 {
 main .crediMotorbike .carBikers .infCarbikers p {
   text-align: center;
   font-weight: 300;
+}
+main .crediMotorbike .carBikers .iconCarbikers {
+  grid-area: iconCarbikers;
+}
+main .crediMotorbike .carBikers .titleCarbikers {
+  grid-area: titleCarbikers;
+  margin: 40px 0;
+  font-size: 30px;
+  color: #838383;
 }
 
 footer {

@@ -5,11 +5,12 @@
 const dataMotorcycles = [benelli150cc, benelli180cc, benelli251cc,benelli302cc,benelli500cc]
 const carMontobiker = JSON.parse(localStorage.getItem('carMontobiker')) || []
 const dataMonths = [months12,months24,months36,months48]
-let listMonthsbiker = []
-console.log(listMonthsbiker);
 // Query de Elementos
 const crediMotorbike = document.querySelector('#crediMotorbike')
 const listMonthsbike =document.querySelector('#listMonths')
+const numeroMonths =document.querySelector ('.numeroMonths')
+const feeSegurity =document.querySelector ('.feeSegurity')
+const payMonths =document.querySelector ('.payMonths')
 // Funciones
 //----------
 const delecBikers = (e) => {
@@ -37,6 +38,7 @@ const carBikers = () => {
                 <div class="iconCarbikers">
                     <svg x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"> <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path></svg>
                 </div>
+                <h4 class="titleCarbikers"> Selecciona a cuentas cuotas deseas pagarla</h4>
             `
             crediMotorbike.append(credibike)
         })
@@ -44,16 +46,6 @@ const carBikers = () => {
         deleButtons.forEach((slider) => {
             slider.addEventListener('click', delecBikers)
         })
-        const seleccMonths = (e) => {
-            const bikerSeleccmonts = e.target.getAttribute('data-numb')
-            const months = dataMonths.find((mosths) => mosths.numb == bikerSeleccmonts)
-            if ( carMontobiker.length < 1){
-                listMonthsbiker.push(months)
-            }else{
-                listMonthsbiker.shift()
-                listMonthsbiker.push(months)
-            }
-        }
         function listMonths () {
             dataMonths.forEach((mosths) => {
                 const cardMonths = document.createElement ('a')
@@ -64,7 +56,23 @@ const carBikers = () => {
             })
             const monthsButtons = document.querySelectorAll('.cardMonths')
             monthsButtons.forEach((slider) => {
-                slider.addEventListener('click', seleccMonths )
+                slider.addEventListener('click', seleccMonths)
+            })
+        }
+        const seleccMonths = (e) => {
+            const bikerSeleccmonts = e.target.getAttribute('data-numb')
+            carMontobiker.forEach((motorbiker)=>{
+                const totalCredibike = document.createElement('a')
+                totalCredibike.href = ('../index.html')
+                totalCredibike.classList.add('carBikers')
+                totalCredibike.setAttribute('data-sku', motorbiker.sku)
+                cuotas = bikerSeleccmonts
+                seguro = 50000
+                intereses = Math.ceil(motorbiker.preci/bikerSeleccmonts)
+                cancion = Math.ceil((intereses*0.75)+seguro)
+                numeroMonths.textContent = `Numero de Cuotas:${cuotas}`
+                feeSegurity.textContent = `Monto de seguro:$${seguro}`
+                payMonths.textContent = `Monto mensual:$${cancion}`
             })
         }
         listMonths()
@@ -78,8 +86,5 @@ const carBikers = () => {
         crediMotorbike.append(credibike)
     }
 }
-
-
-
 /*Rederizado aviso*/
 carBikers() 
