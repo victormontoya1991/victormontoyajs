@@ -438,12 +438,27 @@ footer .copyRights .footerRedes svg {
   height: 40px;
 }
 
-@media all and (max-width: 931px) {
-  header .menuBarpc {
-    display: none;
+@media screen and (max-width: 1750px) {
+  main .carrucelMotorbike .motorBike {
+    padding: 40px;
   }
-  header .menuBarmovil {
-    display: flex;
+  main .carrucelMotorbike .motorBike .imgMotorbike {
+    height: 550px;
+    width: 550px;
+  }
+  main .carrucelMotorbike .motorBike .textmotor {
+    margin-right: 0px;
+  }
+  main .carrucelMotorbike .motorBike .textmotor p {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1330px) {
+  main .carrucelMotorbike .motorBike {
+    padding: 20px;
+    grid-template-columns: auto;
+    grid-template-areas: "textmotor" "imgMotorbike";
+    justify-items: end;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -457,6 +472,20 @@ footer .copyRights .footerRedes svg {
   }
   footer .parnert .logos .logo {
     width: 30%;
+  }
+}
+@media all and (max-width: 931px) {
+  header .menuBarpc {
+    display: none;
+  }
+  header .menuBarmovil {
+    display: flex;
+  }
+}
+@media screen and (max-width: 830px) {
+  .mainCredi .totalMonths .listMonths a {
+    font-size: 14px;
+    padding: 10px 15px;
   }
 }
 @media screen and (max-width: 750px) {
@@ -479,5 +508,33 @@ footer .copyRights .footerRedes svg {
   }
   footer .navFooter .columnLogo {
     display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  .mainCredi {
+    padding: 10px;
+  }
+  .mainCredi .crediMotorbike .carBikers {
+    min-width: 90%;
+  }
+  .mainCredi .crediMotorbike .carBikers .titleCarbikers {
+    font-size: 12px;
+    margin: 25px 0;
+  }
+  .mainCredi .crediMotorbike .carBikers .imgCarbikers {
+    height: 100px;
+    width: 100px;
+  }
+  .mainCredi .crediMotorbike .carBikers .infCarbikers h5 {
+    font-size: 20px;
+  }
+  .mainCredi .crediMotorbike .carBikers .iconCarbikers svg {
+    width: 30px;
+    height: 30px;
+  }
+  .mainCredi .totalMonths .listMonths a {
+    font-size: 12px;
+    padding: 10px 10px;
+    margin: 4px;
   }
 }/*# sourceMappingURL=style.css.map */

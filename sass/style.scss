@@ -1,7 +1,6 @@
 //----------------------------------------------
 // Const SCSS
 //----------------------------------------------
-$tabletmax:931px;
 $color1:white;
 $color2:#373736;
 $color3:#262528;
@@ -429,14 +428,27 @@ footer {@include area(footer, 100%, auto auto auto, 0px, "parnert""copyRights");
 //----------------------------------------------
 // Responive SCSS
 //----------------------------------------------
-@media all and (max-width:$tabletmax){
-    header{
-        .menuBarpc{
-            display: none;
+@media screen and (max-width: 1750px){
+    main .carrucelMotorbike .motorBike{
+        padding: 40px;
+        .imgMotorbike {
+        height: 550px;
+        width: 550px;
         }
-        .menuBarmovil{
-            display: flex;
+        .textmotor{
+            margin-right: 0px;
+            p{
+                padding: 0;
+            }
         }
+    }
+}
+@media screen and (max-width: 1330px){
+    main .carrucelMotorbike .motorBike{
+        padding: 20px;
+        grid-template-columns:auto;
+        grid-template-areas: "textmotor" "imgMotorbike";
+        justify-items: end;
     }
 }
 @media screen and (max-width: 1200px){
@@ -449,6 +461,24 @@ footer {@include area(footer, 100%, auto auto auto, 0px, "parnert""copyRights");
             .logo{
                 width: 30%;
             }
+        }
+    }
+}
+@media all and (max-width:931px){
+    header{
+        .menuBarpc{
+            display: none;
+        }
+        .menuBarmovil{
+            display: flex;
+        }
+    }
+}
+@media screen and (max-width:830px){
+    .mainCredi{ 
+        .totalMonths .listMonths a{   
+        font-size: 14px;
+        padding: 10px 15px;
         }
     }
 }
@@ -475,4 +505,32 @@ footer {@include area(footer, 100%, auto auto auto, 0px, "parnert""copyRights");
             display: none;
         }
     } 
+}
+@media screen and (max-width:650px){
+    .mainCredi{ 
+        padding: 10px;
+        .crediMotorbike .carBikers{
+            min-width: 90%;
+            .titleCarbikers {
+            font-size: 12px;
+            margin: 25px 0;
+            }
+            .imgCarbikers{
+                height: 100px;
+                width: 100px;
+            }
+            .infCarbikers h5 {
+                font-size: 20px;
+            }
+            .iconCarbikers svg{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .totalMonths .listMonths a{   
+        font-size: 12px;
+        padding: 10px 10px;
+        margin: 4px;
+        }
+    }
 }
