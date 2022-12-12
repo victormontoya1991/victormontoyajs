@@ -277,25 +277,32 @@ main .carrucelMotorbike .motorBike .imgMotorbike {
   background-position: center;
   background-repeat: no-repeat;
 }
-main .crediMotorbike {
+
+.mainCredi {
+  display: grid;
+  grid-template-areas: "crediMotorbike" "totalMonths";
+  min-height: 60vh;
+  padding: 50px;
+  justify-items: center;
+}
+.mainCredi .crediMotorbike {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  min-height: 60vh;
   align-content: center;
   justify-items: center;
   grid-template-areas: "emptyCar" "carBikers";
 }
-main .crediMotorbike .emptyCar {
+.mainCredi .crediMotorbike .emptyCar {
   display: grid;
   justify-items: center;
 }
-main .crediMotorbike .emptyCar h2 {
+.mainCredi .crediMotorbike .emptyCar h2 {
   font-size: 50px;
   text-align: center;
   color: #ff4848;
 }
-main .crediMotorbike .emptyCar a {
+.mainCredi .crediMotorbike .emptyCar a {
   text-align: center;
   font-size: 16px;
   padding: 10px 40px;
@@ -305,7 +312,7 @@ main .crediMotorbike .emptyCar a {
   background-color: rgba(238, 238, 238, 0.116);
   backdrop-filter: blur(100px);
 }
-main .crediMotorbike .carBikers {
+.mainCredi .crediMotorbike .carBikers {
   display: grid;
   justify-items: center;
   grid-template-columns: 30% 50% 20%;
@@ -315,26 +322,26 @@ main .crediMotorbike .carBikers {
   min-width: 500px;
   max-width: 800px;
 }
-main .crediMotorbike .carBikers .imgCarbikers {
+.mainCredi .crediMotorbike .carBikers .imgCarbikers {
   grid-area: imgCarbikers;
   height: 150px;
   width: 150px;
 }
-main .crediMotorbike .carBikers .infCarbikers {
+.mainCredi .crediMotorbike .carBikers .infCarbikers {
   grid-area: infCarbikers;
   text-align: center;
 }
-main .crediMotorbike .carBikers .infCarbikers h5 {
+.mainCredi .crediMotorbike .carBikers .infCarbikers h5 {
   font-size: 35px;
 }
-main .crediMotorbike .carBikers .infCarbikers p {
+.mainCredi .crediMotorbike .carBikers .infCarbikers p {
   text-align: center;
   font-weight: 300;
 }
-main .crediMotorbike .carBikers .iconCarbikers {
+.mainCredi .crediMotorbike .carBikers .iconCarbikers {
   grid-area: iconCarbikers;
 }
-main .crediMotorbike .carBikers .titleCarbikers {
+.mainCredi .crediMotorbike .carBikers .titleCarbikers {
   grid-area: titleCarbikers;
   margin: 40px 0;
   font-size: 30px;

@@ -287,11 +287,17 @@ main{@include area(main, 100%, auto, 0px, "carrucelMotorcycles");
             }
         }
     }
+}
+.mainCredi{
+    display: grid;
+    grid-template-areas:"crediMotorbike" "totalMonths";
+    min-height: 60vh;
+    padding: 50px;
+    justify-items: center;
     .crediMotorbike{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        min-height: 60vh;
         align-content: center;
         justify-items: center;
         grid-template-areas: "emptyCar" "carBikers";
