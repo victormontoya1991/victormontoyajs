@@ -66,13 +66,13 @@ const carBikers = () => {
                 totalCredibike.href = ('../index.html')
                 totalCredibike.classList.add('carBikers')
                 totalCredibike.setAttribute('data-sku', motorbiker.sku)
-                cuotas = bikerSeleccmonts
-                seguro = 50000
+                months = bikerSeleccmonts
+                segurity = 50000
                 intereses = Math.ceil(motorbiker.preci/bikerSeleccmonts)
-                cancion = Math.ceil((intereses*0.75)+seguro)
-                numeroMonths.textContent = `Numero de Cuotas:${cuotas}`
-                feeSegurity.textContent = `Monto de seguro:$${seguro}`
-                payMonths.textContent = `Monto mensual:$${cancion}`
+                payment = Math.ceil((intereses*0.75)+segurity)
+                numeroMonths.innerHTML = `<p>Numero de Cuotas:</p><h4>${months}</h4>`
+                feeSegurity.innerHTML = `<p>Monto de seguro:</p><h6>$${segurity}</h6>`
+                payMonths.innerHTML = `<p>Monto de seguro:</p><h4>$${payment}</h4>`
             })
         }
         listMonths()
