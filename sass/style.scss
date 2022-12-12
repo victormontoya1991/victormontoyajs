@@ -446,7 +446,7 @@ footer {@include area(footer, 100%, auto auto auto, 0px, "parnert""copyRights");
 @media screen and (max-width: 1330px){
     main .carrucelMotorbike .motorBike{
         padding: 20px;
-        grid-template-columns:auto;
+        grid-template-columns:100%;
         grid-template-areas: "textmotor" "imgMotorbike";
         justify-items: end;
     }
@@ -464,13 +464,31 @@ footer {@include area(footer, 100%, auto auto auto, 0px, "parnert""copyRights");
         }
     }
 }
-@media all and (max-width:931px){
+@media all and (max-width:960px){
     header{
         .menuBarpc{
             display: none;
         }
         .menuBarmovil{
             display: flex;
+        }
+    }
+    main .carrucelMotorbike{ 
+        padding: 0 10px;
+        .motorBike{
+            .textmotor{
+                margin-top: 0px;
+                h3{
+                    font-size: 45px;
+                }
+                p{
+                    font-size: 11px;
+                }
+            }
+            .imgMotorbike {
+                height: 450px;
+                width: 450px;
+            }
         }
     }
 }
