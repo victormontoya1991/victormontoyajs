@@ -72,7 +72,7 @@ const carBikers = () => {
                 payment = Math.ceil((intereses*1.75)+segurity)
                 numeroMonths.innerHTML = `<p>Numero de Cuotas:</p><h4>${months}</h4>`
                 feeSegurity.innerHTML = `<p>Monto mensual de seguro:</p><h6>$${segurity}</h6>`
-                payMonths.innerHTML = `<p>Monto de seguro:</p><h4>$${payment}</h4>`
+                payMonths.innerHTML = `<p>Cuota mensual:</p><h4>$${payment}</h4>`
             })
         }
         listMonths()
